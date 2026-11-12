@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The English Language Academy | Jafor Iqbal – Educational &amp; Author Portfolio</title>
+    <meta name="description" content="The English Language Academy - Official Portfolio of Jafor Iqbal: Writer, English Educator, Lecturer at Raipura Govt. College, and Founder & CEO of Mirror IELTS & Abroad.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- External Separate Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- Preloader -->
+    <div id="loader">
+        <div class="loader-spinner"></div>
+        <div class="loader-text">THE ENGLISH LANGUAGE ACADEMY</div>
+    </div>
+
+    <!-- 1. TOP NOTICE BAR (শীর্ষ নোটিশ বার) -->
+    <div class="top-notice-bar" id="topNoticeBar" style="display: none;">
+        <div class="container notice-content">
+            <span class="notice-badge" id="noticeBadge">📢 জরুরি বিজ্ঞপ্তি</span>
+            <div class="notice-ticker" id="noticeTickerText">
+                ভর্তি চলছে! IELTS ও Spoken English নতুন ব্যাচে সীমিত আসনে ভর্তি চলছে। <a href="#admission">অনলাইন ভর্তি ফর্ম পূরণ করুন ➔</a>
+            </div>
+        </div>
+        <button class="notice-close" onclick="dismissNoticeBar()" aria-label="Close Notice">&times;</button>
+    </div>
+
+    <!-- 2. STICKY NAVIGATION BAR -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#hero" class="nav-brand">
+                <img src="images/academy-logo.jpg" alt="Logo" class="nav-logo-thumb" id="navLogoThumb">
+                <span class="nav-logo-text">Jafor <span>Iqbal</span></span>
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#hero" class="nav-link active">Home</a></li>
+                <li><a href="#circulars" class="nav-link">Admission Notice</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#teacher" class="nav-link">Teacher Profile</a></li>
+                <li><a href="#courses" class="nav-link">Courses</a></li>
+                <li><a href="#books" class="nav-link">Books</a></li>
+                <li><a href="#gallery" class="nav-link">Gallery</a></li>
+                <li><a href="#videos" class="nav-link">Videos</a></li>
+                <li><a href="#admission" class="nav-link">Admission Form</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="admin.html" class="nav-link nav-admin-btn">⚙ Admin Panel</a></li>
+            </ul>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle Navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 3. HERO SECTION -->
+    <section class="hero" id="hero">
+        <div class="hero-bg" id="heroBg"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-logo-watermark" id="heroWatermark"></div>
+
+        <div class="container hero-content">
+            <div class="hero-badge" id="heroBadge">✦ The English Language Academy · Founder &amp; CEO</div>
+            <h1 id="heroName">Writer – <span>Jafor Iqbal</span></h1>
+            <p class="hero-subtitle" id="heroSubtitle">Lecturer in English, Raipura Govt. College · Author of The Word Factory &amp; English Pro · English Olympiad Adjudicator</p>
+            
+            <div class="typing-container">
+                <span class="typing-text" id="typingText"></span>
+            </div>
+
+            <div class="hero-actions">
+                <a href="#admission" class="btn btn-primary">🎓 অনলাইন ভর্তি আবেদন</a>
+                <a href="#books" class="btn btn-gold">📚 বই অর্ডার করুন</a>
+                <a href="#videos" class="btn btn-outline">▶ লেকচার ও ক্লাস ভিডিও</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. ADMISSION NOTICE (ভর্তি বিজ্ঞপ্তি ও ব্যাচসমূহ) -->
+    <section class="section section-dark" id="circulars">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">নতুন সেশন ও ব্যাচ</span>
+                <h2>Admission Notice (ভর্তি বিজ্ঞপ্তি)</h2>
+                <div class="section-divider"></div>
+                <p>The English Language Academy-এর চলমান ও আসন্ন বিশেষ ব্যাচসমূহ। আসন সংখ্যা সীমিত, এখনই আবেদন করুন।</p>
+            </div>
+
+            <div class="circulars-grid" id="circularsGrid">
+                <!-- Dynamically loaded from LocalStorage / Database -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. ABOUT SECTION -->
+    <section class="academy-section" id="about">
+        <div class="academy-bg-glow"></div>
+        <div class="container">
+            <div class="academy-header-card">
+                <div class="academy-crest">
+                    <img src="images/academy-logo.jpg" alt="The English Language Academy Logo" id="academyLogoImg">
+                </div>
+                <div class="academy-info">
+                    <h3 id="academyName">The <span>English Language Academy</span></h3>
+                    <p id="academyTagline">
+                        <strong>Learn Smart | Speak Confident | Achieve Success</strong> — ২০১৮ সালে রায়পুরা, নরসিংদীতে প্রতিষ্ঠিত। আন্তর্জাতিক মানের আইইএলটিএস প্রস্তুতি, বিদেশে উচ্চশিক্ষা পরামর্শ এবং বাস্তবমুখী ইংরেজি শিক্ষায় নির্ভরযোগ্য প্রতিষ্ঠান।
+                    </p>
+                    <div class="academy-badges" id="academyBadges">
+                        <!-- Dynamically populated -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="vision-grid" id="academyVisionGrid">
+                <!-- Dynamically loaded from LocalStorage -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. TEACHER PROFILE (শিক্ষক পরিচিতি - ছবির পাশে ক্রমানুসারে পূর্ণ তথ্য) -->
+    <section class="teacher-section" id="teacher">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Instructor, Author &amp; Mentor Profile</span>
+                <h2>Teacher Profile (শিক্ষক পরিচিতি)</h2>
+                <div class="section-divider"></div>
+                <p>শিক্ষকের ছবি বাম পাশে এবং গভীর অভিজ্ঞতা ও পাণ্ডিত্যপূর্ণ পরিচিতি ডান পাশে ক্রমানুসারে সাজানো</p>
+            </div>
+
+            <div class="teacher-card">
+                <!-- বাম পাশ: শিক্ষকের ছবি -->
+                <div class="teacher-photo-col">
+                    <div class="teacher-photo-frame">
+                        <img src="images/sir_pic_1.jpg" alt="Writer – Jafor Iqbal" id="teacherPhoto">
+                    </div>
+                    <div class="teacher-verified-badge">
+                        <span>✓</span> Verified Educator &amp; Author
+                    </div>
+                </div>
+
+                <!-- ডান পাশ: ক্রমানুসারে তথ্য -->
+                <div class="teacher-info-col">
+                    
+                    <!-- ১. নাম ও পরিচয় (Writer – Jafor Iqbal) -->
+                    <div class="teacher-identity-block">
+                        <span class="teacher-tag">Author &amp; Educator</span>
+                        <h3 class="teacher-name" id="teacherName">Writer – <span>Jafor Iqbal</span></h3>
+                        <p class="teacher-roles" id="teacherRoles">
+                            প্রভাষক (ইংরেজি), রায়পুরা সরকারি কলেজ<br>
+                            প্রতিষ্ঠাতা ও প্রধান নির্বাহী (CEO), Mirror IELTS &amp; Abroad<br>
+                            অফিসিয়াল বিচারক (Adjudicator), English Olympiad (জাতীয় পর্যায়)
+                        </p>
+                    </div>
+
+                    <!-- ২. শিক্ষাগত যোগ্যতা (Educational Qualifications) -->
+                    <div class="teacher-qual-block">
+                        <h4 class="teacher-block-title">
+                            <span class="icon-gold">🎓</span> Educational Qualifications (শিক্ষাগত যোগ্যতা)
+                        </h4>
+                        <div class="teacher-list" id="teacherEducationList">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+
+                    <!-- ৩. পেশাগত অভিজ্ঞতা (Professional Experience) -->
+                    <div class="teacher-exp-block">
+                        <h4 class="teacher-block-title">
+                            <span class="icon-gold">💼</span> Professional Experience (পেশাগত অভিজ্ঞতা)
+                        </h4>
+                        <div class="teacher-list" id="teacherExperienceList">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+
+                    <!-- ৪. বিশেষ দক্ষতা ও অর্জন (Special Skills & Achievements) -->
+                    <div class="teacher-skills-block">
+                        <h4 class="teacher-block-title">
+                            <span class="icon-gold">🎯</span> Special Skills &amp; Achievements (বিশেষ দক্ষতা ও অর্জন)
+                        </h4>
+                        <div class="teacher-skills-tags" id="teacherSkillsTags">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+
+                    <!-- ৫. সোশ্যাল মিডিয়া ও সরাসরি যোগাযোগ বাটনসমূহ -->
+                    <div class="teacher-action-buttons">
+                        <a href="https://facebook.com/jafor.iqbal.shahib" target="_blank" class="btn-social-action btn-fb-profile" id="teacherFbProfile">
+                            <span>📘</span> Facebook Profile
+                        </a>
+                        <a href="https://facebook.com/JaforIqbalEnglishAid" target="_blank" class="btn-social-action btn-fb-page" id="teacherFbPage">
+                            <span>🌐</span> Facebook Page
+                        </a>
+                        <a href="https://wa.me/8801707236855" target="_blank" class="btn-social-action btn-wa-action" id="teacherWaAction">
+                            <span>💬</span> WhatsApp পরামর্শ
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. COURSES SECTION (কোর্সসমূহ) -->
+    <section class="section section-dark" id="courses">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Programs &amp; Curricula</span>
+                <h2>Courses (আমাদের কোর্সসমূহ)</h2>
+                <div class="section-divider"></div>
+                <p>বাস্তবমুখী পাঠদান পদ্ধতি ও আন্তর্জাতিক মানের ম্যাটেরিয়ালে সাজানো আমাদের কোর্সসমূহ</p>
+            </div>
+
+            <div class="programs-grid" id="coursesGrid">
+                <!-- Dynamically loaded from LocalStorage -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. BOOKS & ONLINE ORDER SYSTEM (বই ও অনলাইন অর্ডার) -->
+    <section class="section" id="books">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">জাফর ইকবাল রচিত বইসমূহ</span>
+                <h2>Books &amp; Publications (বই ও প্রকাশনা)</h2>
+                <div class="section-divider"></div>
+                <p>The Word Factory ও English Pro বই দুটি দিয়ে শুরু হোক আপনার সাবলীল ইংরেজি যাত্রা। সরাসরি ক্যাশ অন ডেলিভারিতে অর্ডার করুন।</p>
+            </div>
+
+            <div class="books-grid" id="booksGrid">
+                <!-- Dynamically loaded from LocalStorage -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. PHOTO GALLERY -->
+    <section class="section section-dark" id="gallery">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Visual Moments</span>
+                <h2>Photo Gallery (ফটো গ্যালারি)</h2>
+                <div class="section-divider"></div>
+                <p>ক্লাসরুম, বই উৎসব, সেমিনার ও দ্য ইংলিশ ল্যাঙ্গুয়েজ একাডেমির বিশেষ মুহূর্তগুলো</p>
+            </div>
+
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Dynamically loaded from LocalStorage -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. VIDEOS MANAGEMENT SYSTEM (YOUTUBE & FACEBOOK FILTER & SEARCH) -->
+    <section class="section" id="videos">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Lectures &amp; Live Sessions</span>
+                <h2>Videos (ভিডিও লেকচার ও ক্লাস)</h2>
+                <div class="section-divider"></div>
+                <p>YouTube ও Facebook ভিডিও এক জায়গায় দেখা যায়, ফিল্টার ট্যাব ও সার্চসহ</p>
+            </div>
+
+            <!-- Video Search & Filter Bar -->
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 15px; margin-bottom: 30px;">
+                <div class="video-filter-bar" style="margin-bottom: 0;">
+                    <button class="filter-btn active" data-filter="all">All Videos</button>
+                    <button class="filter-btn" data-filter="youtube">▶ YouTube Videos</button>
+                    <button class="filter-btn" data-filter="facebook">📘 Facebook Videos</button>
+                </div>
+                <div style="max-width: 320px; width: 100%;">
+                    <input type="text" id="videoSearchInput" class="form-control" placeholder="🔍 ভিডিও সার্চ করুন..." oninput="handleVideoSearch(this.value)">
+                </div>
+            </div>
+
+            <!-- Dynamic Videos Grid -->
+            <div class="videos-grid" id="videosGrid">
+                <!-- Dynamically loaded from LocalStorage -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 11. ADMISSION FORM (অনলাইন ভর্তি ফর্ম - পিতা-মাতার নামসহ) -->
+    <section class="admission-section" id="admission">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" style="color: #f0c674;">Online Admission</span>
+                <h2 style="color: #ffffff;">Admission Form (অনলাইন ভর্তি ফর্ম)</h2>
+                <div class="section-divider" style="background: #d4a843;"></div>
+                <p style="color: #cbd5e1;">পছন্দের কোর্সে ভর্তির আবেদন করতে নিচের ফর্মটি নির্ভুলভাবে পূরণ করুন। আবেদনটি সরাসরি অ্যাডমিন প্যানেলে জমা হবে।</p>
+            </div>
+
+            <div class="admission-card">
+                <form id="admissionForm" onsubmit="handleAdmissionSubmit(event)">
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
+                        
+                        <!-- Student Name -->
+                        <div class="form-group">
+                            <label for="admStudentName">Student Name (শিক্ষার্থীর পূর্ণ নাম) *</label>
+                            <input type="text" id="admStudentName" class="form-control" placeholder="আপনার পুরো নাম লিখুন" required>
+                        </div>
+
+                        <!-- Father's Name -->
+                        <div class="form-group">
+                            <label for="admFatherName">Father's Name (পিতার নাম) *</label>
+                            <input type="text" id="admFatherName" class="form-control" placeholder="পিতার পূর্ণ নাম" required>
+                        </div>
+
+                        <!-- Mother's Name -->
+                        <div class="form-group">
+                            <label for="admMotherName">Mother's Name (মাতার নাম) *</label>
+                            <input type="text" id="admMotherName" class="form-control" placeholder="মাতার পূর্ণ নাম" required>
+                        </div>
+
+                        <!-- Mobile Number -->
+                        <div class="form-group">
+                            <label for="admPhone">Mobile Number (মোবাইল নম্বর - WhatsApp সচল) *</label>
+                            <input type="tel" id="admPhone" class="form-control" placeholder="017XXXXXXXX" pattern="[0-9]{11}" title="১১ ডিজিটের মোবাইল নম্বর দিন" required>
+                        </div>
+
+                        <!-- Email -->
+                        <div class="form-group">
+                            <label for="admEmail">Email (ইমেইল ঠিকানা) *</label>
+                            <input type="email" id="admEmail" class="form-control" placeholder="student@gmail.com" required>
+                        </div>
+
+                        <!-- Course Selection -->
+                        <div class="form-group">
+                            <label for="admCourse">Course Selection (কোর্স নির্বাচন) *</label>
+                            <select id="admCourse" class="form-control" required>
+                                <option value="">-- কোর্স সিলেক্ট করুন --</option>
+                                <option value="Spoken English & Fluency Mastery">Spoken English &amp; Fluency Mastery</option>
+                                <option value="IELTS Complete Masterclass (Target 8.0)">IELTS Complete Masterclass (Target 8.0)</option>
+                                <option value="HSC English Academic Care">HSC English Academic Care (1st &amp; 2nd Paper)</option>
+                                <option value="SSC English Academic Care">SSC English Academic Care</option>
+                                <option value="Job & BCS English Foundation">Job &amp; BCS English Foundation</option>
+                                <option value="Study Abroad & IELTS Counseling">Study Abroad &amp; IELTS Counseling</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Address -->
+                    <div class="form-group" style="margin-top: 15px;">
+                        <label for="admAddress">Address (বর্তমান পূর্ণ ঠিকানা) *</label>
+                        <input type="text" id="admAddress" class="form-control" placeholder="গ্রাম/রোড, উপজেলা/থানা, জেলা" required>
+                    </div>
+
+                    <!-- Message / Note -->
+                    <div class="form-group" style="margin-top: 15px;">
+                        <label for="admNotes">Message (বার্তা বা বিশেষ কোনো জিজ্ঞাসা)</label>
+                        <textarea id="admNotes" class="form-control" rows="3" placeholder="কোর্স বা ব্যাচ সম্পর্কিত কোনো প্রশ্ন থাকলে এখানে লিখতে পারেন..."></textarea>
+                    </div>
+
+                    <div id="admissionAlert" style="display: none; padding: 12px; border-radius: 8px; margin-top: 15px; font-weight: 600;"></div>
+
+                    <button type="submit" class="btn btn-gold" style="width: 100%; margin-top: 20px; padding: 14px; font-size: 1.05rem; justify-content: center;">
+                        Submit Application (ভর্তি আবেদন জমা দিন) ➔
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 12. CONTACT SECTION -->
+    <section class="section section-dark" id="contact">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">যোগাযোগ করুন</span>
+                <h2>Contact Information (যোগাযোগ)</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-card">
+                    <h3>Send a Direct Message</h3>
+                    <form id="contactForm" onsubmit="handleContactSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">আপনার নাম *</label>
+                            <input type="text" id="name" name="name" class="form-control" placeholder="আপনার পূর্ণ নাম" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">ইমেইল *</label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="example@gmail.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">মোবাইল / WhatsApp</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" placeholder="01707236855">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">আপনার বার্তা *</label>
+                            <textarea id="message" name="message" class="form-control" rows="4" placeholder="জাফর ইকবাল স্যার কীভাবে আপনাকে সাহায্য করতে পারেন?" required></textarea>
+                        </div>
+                        <div id="contactFormAlert" style="display: none; padding: 10px; border-radius: 8px; margin-bottom: 12px; font-weight: 600;"></div>
+                        <button type="submit" class="btn btn-gold" style="width: 100%; justify-content: center;">Send Message ✉</button>
+                    </form>
+                </div>
+
+                <!-- Contact Details -->
+                <div class="contact-card">
+                    <h3>Reach Us Directly</h3>
+                    <div class="contact-info-list">
+                        <div class="contact-info-item">
+                            <div class="contact-icon-box">📞</div>
+                            <div>
+                                <h4>সরাসরি কল</h4>
+                                <p><a href="tel:01707236855" id="conPhone1El">01707236855</a> (WhatsApp)</p>
+                                <p><a href="tel:01992785557" id="conPhone2El">01992785557</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="contact-icon-box">💬</div>
+                            <div>
+                                <h4>WhatsApp পরামর্শ</h4>
+                                <p><a href="https://wa.me/8801707236855" target="_blank" id="conWhatsappLinkEl">জাফর ইকবাল স্যারের সাথে হোয়াটসঅ্যাপে চ্যাট করুন</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="contact-icon-box">📘</div>
+                            <div>
+                                <h4>Facebook পেজ ও আইডি</h4>
+                                <p><a href="https://facebook.com/jafor.iqbal.shahib" target="_blank" id="conFbPersonalEl">Jafor Iqbal (Shahib)</a></p>
+                                <p><a href="https://facebook.com/JaforIqbalEnglishAid" target="_blank" id="conFbPageEl">Jafor Iqbal’s English Aid</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-info-item">
+                            <div class="contact-icon-box">📍</div>
+                            <div>
+                                <h4>অফিস ও একাডেমি ঠিকানা</h4>
+                                <p id="conAddressEl">The English Language Academy,<br>রায়পুরা সরকারি কলেজের সামনে, রায়পুরা, নরসিংদী।</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links" style="margin-top: 25px;">
+                        <a href="https://facebook.com/jafor.iqbal.shahib" target="_blank" class="social-btn" title="Facebook Profile">📘</a>
+                        <a href="https://facebook.com/JaforIqbalEnglishAid" target="_blank" class="social-btn" title="Facebook Page">🌐</a>
+                        <a href="https://wa.me/8801707236855" target="_blank" class="social-btn" title="WhatsApp">💬</a>
+                        <a href="tel:01707236855" class="social-btn" title="Call">📞</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>The English Language Academy</h3>
+                    <p id="footerBrandText">
+                        Writer – Jafor Iqbal · English Educator · IELTS Specialist · Founder &amp; CEO, Mirror IELTS &amp; Abroad. শিক্ষার্থীদের ভীতি দূর করে বাস্তবমুখী ও কার্যকর ইংরেজি শিক্ষায় প্রতিশ্রুতিবদ্ধ।
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#circulars">Admission Notice</a></li>
+                        <li><a href="#teacher">Teacher Profile</a></li>
+                        <li><a href="#courses">Courses</a></li>
+                        <li><a href="#books">Books &amp; Publications</a></li>
+                        <li><a href="#admission">Admission Form</a></li>
+                        <li><a href="#videos">Video Lectures</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Admin &amp; Support</h4>
+                    <ul class="footer-links">
+                        <li><a href="admin.html">⚙ Admin Panel Login</a></li>
+                        <li><a href="#contact">Contact &amp; Support</a></li>
+                        <li><a href="https://wa.me/8801707236855" target="_blank">WhatsApp Helpline</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p id="footerCopyright">&copy; 2026 The English Language Academy | Writer – Jafor Iqbal. সর্বস্বত্ব সংরক্ষিত।</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 13. INTERACTIVE BOOK ORDER MODAL (বই অর্ডার ও স্বয়ংক্রিয় মূল্য হিসাব) -->
+    <div class="order-modal" id="bookOrderModal">
+        <div class="order-modal-dialog">
+            <button class="order-modal-close" onclick="closeOrderModal()">&times;</button>
+            <div class="order-modal-header">
+                <h3>📖 Order Form (বইয়ের অর্ডার ফর্ম)</h3>
+                <p>সারা বাংলাদেশে হোম ডেলিভারি ও ক্যাশ অন ডেলিভারি সুবিধা</p>
+            </div>
+
+            <form id="bookOrderForm" onsubmit="handleBookOrderSubmit(event)">
+                <input type="hidden" id="orderBookId">
+                <input type="hidden" id="orderBookUnitPrice">
+
+                <!-- Book Selection -->
+                <div class="form-group" style="margin-bottom: 12px;">
+                    <label for="orderBookSelect" style="font-weight: 600; color: #0d1b3e; font-size: 0.9rem;">Book Selection (বই নির্বাচন) *</label>
+                    <select id="orderBookSelect" class="form-control" onchange="onBookSelectChange(this.value)">
+                        <!-- Populated dynamically -->
+                    </select>
+                </div>
+
+                <!-- অর্ডার সামারি ও স্বয়ংক্রিয় হিসাব -->
+                <div class="order-summary-box">
+                    <div class="order-book-info">
+                        <span id="orderSummaryBookTitle" style="color: #0d1b3e; font-size: 1.05rem; font-weight: 700;">The Word Factory</span>
+                        <span id="orderSummaryUnitPrice" style="color: #b3882f; font-size: 1.05rem; font-weight: 700;">৳৪৫০</span>
+                    </div>
+
+                    <table class="order-calc-table">
+                        <tr>
+                            <td>Quantity (পরিমাণ):</td>
+                            <td style="text-align: right;">
+                                <div class="qty-control">
+                                    <button type="button" class="qty-btn" onclick="adjustOrderQty(-1)">-</button>
+                                    <input type="text" id="orderQtyInput" class="qty-input" value="1" readonly>
+                                    <button type="button" class="qty-btn" onclick="adjustOrderQty(1)">+</button>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>বইয়ের মূল্য:</td>
+                            <td style="text-align: right; font-weight: 600;" id="orderSubtotalText">৳৪৫০</td>
+                        </tr>
+                        <tr>
+                            <td>কুরিয়ার চার্জ (হোম ডেলিভারি):</td>
+                            <td style="text-align: right; font-weight: 600;" id="orderDeliveryText">৳৫০</td>
+                        </tr>
+                        <tr class="total-row">
+                            <td>Total Price (সর্বমোট প্রদেয়):</td>
+                            <td style="text-align: right;" id="orderGrandTotalText">৳৫০০</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- Customer Name -->
+                <div class="form-group" style="margin-bottom: 12px;">
+                    <label for="orderCustomerName" style="font-weight: 600; color: #0d1b3e; font-size: 0.9rem;">Customer Name (গ্রাহকের নাম) *</label>
+                    <input type="text" id="orderCustomerName" class="form-control" placeholder="আপনার পূর্ণ নাম লিখুন" required>
+                </div>
+
+                <!-- Mobile Number -->
+                <div class="form-group" style="margin-bottom: 12px;">
+                    <label for="orderCustomerPhone" style="font-weight: 600; color: #0d1b3e; font-size: 0.9rem;">Mobile Number (মোবাইল নম্বর) *</label>
+                    <input type="tel" id="orderCustomerPhone" class="form-control" placeholder="01XXXXXXXXX" pattern="[0-9]{11}" title="সঠিক ১১ ডিজিটের মোবাইল নম্বর দিন" required>
+                </div>
+
+                <!-- Full Address -->
+                <div class="form-group" style="margin-bottom: 12px;">
+                    <label for="orderCustomerAddress" style="font-weight: 600; color: #0d1b3e; font-size: 0.9rem;">Full Address (সম্পূর্ণ ঠিকানা) *</label>
+                    <textarea id="orderCustomerAddress" class="form-control" rows="2" placeholder="বাড়ি/রোড, এলাকা/গ্রাম, থানা/উপজেলা, জেলা" required></textarea>
+                </div>
+
+                <p style="font-size: 0.82rem; color: #64748b; margin-bottom: 15px;">
+                    ℹ️ পেমেন্ট মেথড: <strong>ক্যাশ অন ডেলিভারি</strong> (বই হাতে পেয়ে কুরিয়ার ডেলিভারিম্যানকে টাকা পরিশোধ করবেন)।
+                </p>
+
+                <div id="orderAlert" style="display: none; padding: 10px; border-radius: 8px; margin-bottom: 15px; font-weight: 600;"></div>
+
+                <button type="submit" class="btn btn-gold" style="width: 100%; justify-content: center; padding: 12px; font-size: 1.05rem;">
+                    Submit Order (অর্ডার কনফার্ম করুন) ➔
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Floating WhatsApp Action -->
+    <a href="https://wa.me/8801707236855" target="_blank" class="whatsapp-float" id="whatsappFloat" title="WhatsApp-এ চ্যাট করুন">
+        💬
+    </a>
+
+    <!-- Scroll to Top Button -->
+    <button class="back-to-top" id="backToTop" title="উপরে যান">↑</button>
+
+    <!-- Lightbox Modal for Gallery Images -->
+    <div class="lightbox-modal" id="lightboxModal">
+        <span class="lightbox-close">&times;</span>
+        <img src="" alt="Enlarged View" class="lightbox-content" id="lightboxImg">
+    </div>
+
+    <!-- External Main JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>
